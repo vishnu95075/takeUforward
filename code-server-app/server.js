@@ -10,6 +10,8 @@ process.on("uncaughtException",(err)=>{
     process.exit(1);
 })
 
+const port = process.env.PORT || 4001;
+
 const server =app.listen(process.env.PORT, ()=>{
     console.log(`Server Running on PORT = http://localhost:${process.env.PORT}`)
 })
