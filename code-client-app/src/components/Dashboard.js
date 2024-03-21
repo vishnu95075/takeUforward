@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Typography, Table, Divider, TableRow, TableCell, TableBody, Paper, Grid, TextField } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Divider,
+  Paper,
+  Grid
+} from '@mui/material';
 
 const Dashboard = () => {
   const [codeSnippets, setCodeSnippets] = useState([]);
