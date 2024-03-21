@@ -4,15 +4,15 @@ import axios from 'axios';
 const Dashbord = () => {
   const [codeSnippets, setCodeSnippets] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get('/api/code-snippets')
-  //     .then(res => {
-  //       setCodeSnippets(res.data);
-  //     })
-  //     .catch(err => {
-  //       console.error('Error fetching code snippets:', err);
-  //     });
-  // }, []);
+
+  axios.get('/api/code-snippets')
+    .then(res => {
+      setCodeSnippets(res.data);
+    })
+    .catch(err => {
+      console.error('Error fetching code snippets:', err);
+    });
+
 
   return (
     <div>
