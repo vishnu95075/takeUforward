@@ -45,7 +45,6 @@ export default function Home() {
                     <button type="submit">Submit</button>
                 </form>
             )}
-            <Dashbord />
         </div>
     );
 }
