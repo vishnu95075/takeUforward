@@ -4,15 +4,34 @@ import axios from 'axios';
 const Dashbord = () => {
   const [codeSnippets, setCodeSnippets] = useState([]);
 
+  // useEffect(() => {
+
+  //   axios.get('/api/code-snippets')
+  //     .then(res => {
+  //       setCodeSnippets(res.data);
+  //     })
+  //     .catch(err => {
+  //       console.error('Error fetching code snippets:', err);
+  //     });
+  // }, []);
+
+
   useEffect(() => {
-    axios.get('/api/code-snippets')
-      .then(res => {
-        setCodeSnippets(res.data);
-      })
-      .catch(err => {
-        console.error('Error fetching code snippets:', err);
-      });
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('/api/code-snippets');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const jsonData = await response.json();
+      setCodeSnippets(jsonData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   return (
     <div>
