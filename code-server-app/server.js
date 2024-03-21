@@ -3,6 +3,12 @@ const dotenv = require("dotenv");
 
 dotenv.config({path:".env"})
 
+// Handle Unexception Error
+process.on("uncaughtException",(err)=>{
+    console.log("Erorr ",err.message);
+    console.log('Shoutdown Server Due to Exeption Error');
+    process.exit(1);
+})
 
 const server =app.listen(process.env.PORT, ()=>{
     console.log(`Server Running on PORT = http://localhost:${process.env.PORT}`)

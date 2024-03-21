@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' Component={Home} />
-        <Route exact path='/dashboarrd' Component={Dashbord} />
+        <Route exact path='/dashboard' Component={Dashbord} />
       </Routes>
     </Router>
   );
