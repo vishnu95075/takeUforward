@@ -16,22 +16,37 @@ const Dashbord = () => {
   // }, []);
 
 
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch('/api/code-snippets');
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     const jsonData = await response.json();
+  //     setCodeSnippets(jsonData);
+  //   } catch (error) {
+  //     console.error('Error fetching data:', error);
+  //   }
+  // };
+
+
   useEffect(() => {
     fetchData();
-  }, []);
+}, []);
 
-  const fetchData = async () => {
+const fetchData = async () => {
     try {
-      const response = await fetch('/api/code-snippets');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const jsonData = await response.json();
-      setCodeSnippets(jsonData);
+        const response = await axios.get('/api/code-snippets');
+        setCodeSnippets(response.data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error);
     }
-  };
+};
+
 
   return (
     <div>
