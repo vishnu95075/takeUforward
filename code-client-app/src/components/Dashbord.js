@@ -23,8 +23,8 @@ const Dashbord = () => {
             <th>Username</th>
             <th>Code Language</th>
             <th>Standard Input</th>
-            <th>Source Code Preview</th>
-            <th>Timestamp</th>
+            <th>Source Code</th>
+            <th>Submition Time</th>
           </tr>
         </thead>
         <tbody>
