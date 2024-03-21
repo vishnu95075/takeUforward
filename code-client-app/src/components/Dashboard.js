@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/code-snippets');
+      const response = await axios.get('https://take-uforward.vercel.app/api/code-snippets');
       setCodeSnippets(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
