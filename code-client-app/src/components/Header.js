@@ -8,12 +8,12 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handlePage1 = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setPage(true);
     navigate('/')
   }
   const handlePage2 = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setPage(false);
     navigate('/dashboard');
   }

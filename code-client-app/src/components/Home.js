@@ -21,7 +21,7 @@ export default function Home() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/api/code-snippets', { username, codeLanguage, stdin, sourceCode });
+            await axios.post('https://take-uforward.vercel.app/api/code-snippets', { username, codeLanguage, stdin, sourceCode });
             setSubmitted(true);
             setSourceCode('');
             setStdin('');
