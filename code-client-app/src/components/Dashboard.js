@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Container, Typography, Table, Divider, TableRow, TableCell, TableBody, Paper, Grid, TextField } from '@mui/material';
 
 const Dashboard = () => {
   const [codeSnippets, setCodeSnippets] = useState([]);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,34 +18,33 @@ const Dashboard = () => {
     }
   };
 
-
   return (
-    <div>
-      <h1>Code Snippets</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Code Language</th>
-            <th>Standard Input</th>
-            <th>Source Code</th>
-            <th>Submition Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          {codeSnippets.map(snippet => (
-            <tr key={snippet.id}>
-              <td>{snippet.username}</td>
-              <td>{snippet.code_language}</td>
-              <td>{snippet.stdin}</td>
-              <td>{snippet.source_code_preview}</td>
-              <td>{snippet.created_at}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Container align='center'>
+      <Typography align='center'>Submited Codes</Typography>
+      {
+        codeSnippets.map(snippet => (
+          <Container key={snippet.id}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={3}>
+                <Typography> Username:  {snippet.username}</Typography>
+              </Grid>
+              <Grid item xs={12} sm={3}>
+                <Typography> Code Language: {snippet.code_language}</Typography>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography>Submitted Date:  {snippet.created_at}</Typography>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Paper elevation={1} >
+                  <Typography>  {snippet.source_code_preview}</Typography>
+                </Paper>
+              </Grid>
+            </Grid>
+            <Divider color='blue' variant='bold' />
+          </Container>
+        ))}
+    </Container>
   );
 }
 
-export default Dashboard
+export default Dashboard;
