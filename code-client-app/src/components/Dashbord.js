@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Dashbord(){
+const Dashbord = () => {
   const [codeSnippets, setCodeSnippets] = useState([]);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ export default function Dashbord(){
   );
 }
 
-// export default Dashbord
+export default Dashbord
