@@ -45,6 +45,12 @@ const Dashboard = () => {
                   <Typography>  {snippet.source_code_preview}</Typography>
                 </Paper>
               </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography> Input:</Typography>
+                <Paper elevation={1} >
+                  <Typography> {snippet.stdin}</Typography>
+                </Paper>
+              </Grid>
             </Grid>
             <Divider color='blue' variant='bold' />
           </Container>
